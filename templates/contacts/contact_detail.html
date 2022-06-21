@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block contenu %}
+</br>
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <h4 class="text-center">{{ contact.prenom }} {{contact.nom}} </h4>
+    <div class="card card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            telephone: {{contact.telephone}}
+        </li>
+        <li class="list-group-item">
+            Email: {{contact.email|default_if_none:"non renseigner"}}
+        </li>
+        <li class="list-group-item">
+            date de creation: {{contact.date_enregistrement}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
