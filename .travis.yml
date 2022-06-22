@@ -1,0 +1,24 @@
+language: python
+cache: pip
+python:
+  - "3.9"
+before_install:
+  - python -m pip install --upgrade pip
+install:
+  - pip install -r requirements.txt
+script:
+  - python manage.py test
+# jobs:
+#   include:
+#     - stage: tests
+#       script: python manage.py test
+
+# stage name not required, will continue to use `test`
+# - stage: deploy
+#   script:
+#     - gem install dpl
+#     - gem install faraday -v 1.8.0
+#   before_deploy:
+#     - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+#   deploy:
+#     prov
