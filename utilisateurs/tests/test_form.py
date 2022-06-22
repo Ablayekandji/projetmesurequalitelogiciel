@@ -24,7 +24,7 @@ class TestForm(SimpleTestCase):
         })
         
         self.assertFalse(form.is_valid())
-        self.assertEquals(len(form.errors),1)
+        self.assertEquals(len(form.errors),2)
     
     
     def test__register_formulaire_valide(self):
