@@ -1,8 +1,10 @@
 {% extends 'base.html' %} {% block contenu %}
-<div class="row mt-2">
-  <div class="col-md-6 col-auto mt-4">
-    <div class="card card-body">
+<br><br><br>
+<div class="row justify-content-center m-auto shadow-sm card card-body  col-7">
+  <div class="mt-4">
       <form method="POST">
+        <h3>Modifier le contact</h3>
+        <hr>
         {% csrf_token %}
         <div class="form-group">
           <label for="nom">Nom </label>

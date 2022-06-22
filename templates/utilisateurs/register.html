@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block contenu %}
-<div class="row">
-  <div class="col-md-6 col-auto mt-4">
+<br><br><br>
+<div class="row row justify-content-center m-auto shadow-sm card card-body  col-7">
+  <div class="mt-4">
     <form method="POST">
       {% csrf_token %}
       <div class="form-group">{{form.as_p}}</div>
