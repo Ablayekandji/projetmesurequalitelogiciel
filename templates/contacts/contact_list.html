@@ -2,18 +2,31 @@
 <div class="mt-2">
   <a href="{% url 'new_contact' %}" class="btn btn-info">Nouveau</a>
 </div>
-<div class="row mt-2">
+<div class="row mt-2 card card-body p-2 bg-white border shadow-sm rounded mt-5 ">
   <div class="col-md m-auto">
-    <div class="card card-body">
+    <div>
       {%if contacts%}
       <ul class="list-group list-group-flush">
+        <table class="table border">
+          <thead>
+            <tr>
+              <th scope="col">Prénom</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Téléphone</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
         {% for contact in contacts %}
-        <li class="list-group-item">
-          <a href="{% url 'details' contact.id %}">
-            {{contact.nom}} {{contact.prenom}}
-          </a>
-        </li>
+            <tr>
+              <td>{{ contact.prenom }}</td>
+              <td>{{ contact.nom }}</td>
+              <td>{{ contact.telephone }}</td>
+              <td><a class="btn btn-sm btn-info" href="{% url 'details' contact.id %}">Voir détails</a></td>
+            </tr>
         {% endfor %}
+          </tbody>
+        </table>
       </ul>
       {%else%}
       <p>Contact Vide!!</p>
